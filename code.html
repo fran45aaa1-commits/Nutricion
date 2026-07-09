@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lic. Sofía Martínez • Nutrición Deportiva de Alto Rendimiento</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#c4c8c1",
+                    "outline-variant": "#c6c8b8",
+                    "surface-variant": "#dde4e6",
+                    "surface-bright": "#f4fafd",
+                    "surface-container-low": "#eef5f7",
+                    "inverse-primary": "#bdce89",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#3de273",
+                    "on-tertiary-fixed": "#002109",
+                    "primary-fixed": "#d9eaa3",
+                    "secondary-container": "#dbded7",
+                    "on-secondary-container": "#5e625d",
+                    "on-primary-fixed": "#161f00",
+                    "on-primary-fixed-variant": "#3e4c16",
+                    "tertiary": "#006d2f",
+                    "inverse-on-surface": "#ebf2f4",
+                    "on-secondary-fixed": "#191d19",
+                    "error": "#ba1a1a",
+                    "outline": "#76786b",
+                    "on-surface": "#161d1f",
+                    "surface-container": "#e8eff1",
+                    "secondary": "#5b5f5a",
+                    "surface": "#f4fafd",
+                    "on-background": "#161d1f",
+                    "tertiary-container": "#00aa4d",
+                    "on-tertiary-container": "#003413",
+                    "primary-fixed-dim": "#bdce89",
+                    "background": "#f4fafd",
+                    "surface-tint": "#56642b",
+                    "secondary-fixed": "#e0e3dd",
+                    "on-tertiary-fixed-variant": "#005322",
+                    "primary": "#56642b",
+                    "on-primary-container": "#253000",
+                    "surface-container-high": "#e2e9ec",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#8a9a5b",
+                    "on-surface-variant": "#46483c",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2b3234",
+                    "surface-dim": "#d4dbdd",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#66ff8e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1rem",
+                    "2xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-gap": "100px",
+                    "margin-mobile": "20px",
+                    "base": "8px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "headline-xl-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-xl": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-xl-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-header {
+            background: rgba(244, 250, 253, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(221, 228, 230, 0.5);
+        }
+        .premium-shadow {
+            box-shadow: 0 10px 40px -10px rgba(86, 100, 43, 0.15);
+        }
+        .premium-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .premium-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -8px rgba(86, 100, 43, 0.3);
+        }
+        .premium-button:active {
+            transform: translateY(0);
+        }
+        .stagger-card:nth-child(even) {
+            transform: translateY(30px);
+        }
+        @media (max-width: 768px) {
+            .stagger-card:nth-child(even) {
+                transform: translateY(0);
+            }
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #56642b 0%, #8a9a5b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @keyframes scaleUp {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-scale-up {
+            animation: scaleUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/20 selection:text-primary overflow-x-hidden">
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 glass-header transition-all duration-300 h-20 flex items-center">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto w-full">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-[24px]" data-icon="nutrition">nutrition</span>
+</div>
+<span class="font-headline-md text-[20px] font-bold text-primary tracking-tight">Lic. Sofía Martínez</span>
+</div>
+<nav class="hidden md:flex gap-10 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#services">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#about">Sobre Mí</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#contact">Contacto</a>
+<a class="px-8 py-2.5 bg-primary text-white rounded-full font-label-md text-label-md premium-button" href="#contact">Agendar Cita</a>
+</nav>
+<div class="md:hidden">
+<button id="menu-btn" class="p-2 text-primary focus:outline-none">
+<span class="material-symbols-outlined text-[28px]" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl flex flex-col justify-center items-center gap-8 md:hidden transition-all duration-300 translate-x-full">
+<button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-primary focus:outline-none">
+<span class="material-symbols-outlined text-[32px]">close</span>
+</button>
+<a class="text-[24px] font-headline-md text-on-surface hover:text-primary transition-colors" href="#services">Servicios</a>
+<a class="text-[24px] font-headline-md text-on-surface hover:text-primary transition-colors" href="#about">Sobre Mí</a>
+<a class="text-[24px] font-headline-md text-on-surface hover:text-primary transition-colors" href="#contact">Contacto</a>
+<a class="px-10 py-4 bg-primary text-white rounded-full font-label-md text-label-md premium-button text-[18px] mt-4" href="#contact">Agendar Cita</a>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[95vh] flex items-center pt-20">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-40 mix-blend-multiply filter grayscale-[30%]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7xDAk_yBXKrd9leurK2h-0uyN9EWCh5ZEUSZZ9HaTgmjr1EB6jPtc94BhlMyVGIT9_we4xg7X1RQkgDoTsa_MGNHuZpgJ_LzZ7PxIO-TjvGfP43BteJyVIjCKFeiizbyS5swRjrR-NHD0zqqmJ0sIkojgAeintUXO6cbfqhqfGRDA73-NCpm7hsr1yrynCfN57exWLRCksSRk46y6lKNFcyO7oRP-MQNJ8NMo3h77TaDL-wibaY59l4xI9hfILEztQVVpoKUnCqRO')"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background"></div>
+</div>
+<div class="relative z-10 px-gutter max-w-container-max mx-auto w-full py-20 text-center">
+<div class="max-w-4xl mx-auto space-y-10">
+<div class="inline-flex items-center gap-2 px-5 py-2 bg-primary/5 border border-primary/10 text-primary rounded-full font-label-md text-label-md uppercase tracking-[0.1em] mb-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Especialista en Alto Rendimiento
+                </div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl md:text-headline-xl text-on-surface leading-[1.05]">
+                    Alimenta tu potencial, <br class="hidden md:block"/> <span class="text-gradient">alcanza tus metas.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto opacity-90 font-light">
+                    Transformamos la nutrición en tu mayor ventaja competitiva. Planes basados en ciencia para atletas que no se conforman con lo ordinario.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+<a href="#contact" class="w-full sm:w-auto px-10 py-5 bg-primary text-white rounded-full font-label-md text-label-md premium-button text-[16px] shadow-xl shadow-primary/20 text-center">
+                        Comenzar Transformación
+                    </a>
+<a href="#services" class="w-full sm:w-auto px-10 py-5 border border-primary/20 text-primary rounded-full font-label-md text-label-md hover:bg-primary/5 transition-all text-[16px] text-center">
+                        Explorar Servicios
+                    </a>
+</div>
+<div class="pt-16 flex items-center justify-center gap-8 opacity-40 grayscale group">
+<span class="text-label-md font-bold uppercase tracking-widest text-on-surface-variant">Visto en:</span>
+<div class="flex gap-10 items-center overflow-hidden">
+<span class="material-symbols-outlined text-[32px]">fitness_center</span>
+<span class="material-symbols-outlined text-[32px]">sports_soccer</span>
+<span class="material-symbols-outlined text-[32px]">monitor_heart</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto overflow-visible" id="services">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="space-y-4 max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Servicios de Élite</h2>
+<p class="text-body-md text-on-surface-variant opacity-80">Metodologías personalizadas diseñadas para integrarse perfectamente en tu estilo de vida y potenciar cada entrenamiento.</p>
+</div>
+<a class="text-primary font-label-md border-b-2 border-primary/20 pb-1 hover:border-primary transition-all" href="#contact">Ver todos los detalles</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 pb-12">
+<!-- Service 1 -->
+<div class="stagger-card group">
+<div class="bg-surface-container-lowest p-10 rounded-2xl premium-shadow border border-outline-variant/10 hover:border-primary/20 transition-all duration-500 relative overflow-hidden h-full">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-[32px]" data-icon="fitness_center">fitness_center</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-on-surface mb-4">Nutrición Deportiva</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed mb-8">Estrategias de carga, hidratación y recuperación cronometradas quirúrgicamente para tu competencia.</p>
+<a href="#contact" class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                        Saber más <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="stagger-card group">
+<div class="bg-primary text-white p-10 rounded-2xl shadow-2xl shadow-primary/20 border border-primary/20 hover:scale-[1.02] transition-all duration-500 relative overflow-hidden h-full">
+<div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full"></div>
+<div class="w-16 h-16 bg-white/15 rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-[32px]" data-icon="restaurant">restaurant</span>
+</div>
+<h3 class="font-headline-md text-[24px] mb-4">Planes Premium</h3>
+<p class="font-body-md opacity-90 leading-relaxed mb-8">Diseño nutricional 100% individualizado con recetas exclusivas, lista de compras y ajuste semanal.</p>
+<a href="#contact" class="flex items-center gap-2 font-bold text-sm hover:underline">
+                        Agendar <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="stagger-card group">
+<div class="bg-surface-container-lowest p-10 rounded-2xl premium-shadow border border-outline-variant/10 hover:border-primary/20 transition-all duration-500 relative overflow-hidden h-full">
+<div class="absolute -left-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+<div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-[32px]" data-icon="video_chat">video_chat</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-on-surface mb-4">Consulta Global</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed mb-8">Acceso ilimitado a asesoría profesional desde cualquier parte del mundo con plataforma propia.</p>
+<a href="#contact" class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                        Saber más <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section - Editorial Style -->
+<section class="bg-surface-container-low py-section-gap overflow-hidden" id="about">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+<div class="w-full lg:w-1/2 relative">
+<div class="relative z-10 rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
+<img alt="Lic. Sofía Martínez" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuguGwFCcQCU76_zD2jfV4OGATk0DH1ueNNC9l1KeaiXZBpyiqbaQA2Uk2ua9PftxnpfiqnVkSswYu6sTFHLFhfuoRBcnA2e2RJOZrGNu1e64RPv6ZI9WqDC5jK0NGAuI7MQkbKhjdDqsRydSB1vDK0Mu-T-jtoEV-w72l3rmLc5JdWOiXCUze9sYfR-intqOdOO3SFmZZP-iahNsnik4JLoPdby7kEMb3dI6gFQu4-dU0JxOM3fCcQsAaG"/>
+</div>
+<!-- Modern Frame Elements -->
+<div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-primary/30 z-0"></div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl z-0"></div>
+<div class="absolute bottom-10 -right-6 bg-white p-6 rounded-xl shadow-xl z-20 hidden md:block">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full bg-primary/20 border-2 border-white"></div>
+<div class="w-10 h-10 rounded-full bg-secondary/20 border-2 border-white"></div>
+<div class="w-10 h-10 rounded-full bg-tertiary/20 border-2 border-white"></div>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">+500 Atletas</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Asesorados con éxito</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 space-y-8">
+<div class="space-y-2">
+<span class="text-primary font-label-md uppercase tracking-[0.2em] text-sm">Misión &amp; Trayectoria</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">Ciencia y empatía aplicada al deporte.</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Soy la Lic. Sofía Martínez, y mi enfoque rompe con la nutrición tradicional restrictiva. Creo en el poder de la comida como combustible inteligente, no como un obstáculo.
+                    </p>
+<p class="font-body-md text-on-surface-variant italic border-l-4 border-primary/30 pl-6 py-2">
+                        "Mi objetivo no es solo darte una dieta, es enseñarte a entender tu cuerpo para que seas dueño de tu propio rendimiento."
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">workspace_premium</span>
+<div>
+<p class="font-bold text-on-surface">Postgrado Deportivo</p>
+<p class="text-sm text-on-surface-variant">Especialización en alto rendimiento olímpico.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">analytics</span>
+<div>
+<p class="font-bold text-on-surface">ISAK Nivel 2</p>
+<p class="text-sm text-on-surface-variant">Antropometría técnica de precisión internacional.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">science</span>
+<div>
+<p class="font-bold text-on-surface">Suplementación</p>
+<p class="text-sm text-on-surface-variant">Protocolos seguros basados en evidencia (AIS).</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">groups</span>
+<div>
+<p class="font-bold text-on-surface">8+ Años</p>
+<p class="text-sm text-on-surface-variant">Experiencia con equipos élite y amateurs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="py-section-gap px-gutter max-w-container-max mx-auto" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+<div class="space-y-8">
+<div class="space-y-4">
+<span class="text-primary font-label-md uppercase tracking-[0.2em] text-sm">Contacto</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">Da el primer paso hoy.</h2>
+<p class="font-body-md text-on-surface-variant opacity-80">
+Completa el formulario y me pondré en contacto contigo para coordinar tu primera consulta y diseñar un plan a tu medida.
+</p>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Correo Electrónico</p>
+<a href="mailto:info@licsofiamartinez.com" class="text-primary hover:underline text-sm">info@licsofiamartinez.com</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Ubicación</p>
+<p class="text-on-surface-variant text-sm">Buenos Aires, Argentina (y Consultas Online en todo el mundo)</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-surface-container-low p-8 sm:p-10 rounded-2xl premium-shadow border border-outline-variant/10">
+<form id="contact-form" class="space-y-6" novalidate>
+<div>
+<label for="name" class="block font-label-md text-label-md text-on-surface-variant mb-2">Nombre Completo</label>
+<input type="text" id="name" name="name" required
+class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary text-on-surface outline-none transition-all"
+placeholder="Juan Pérez">
+<span class="error-msg text-error text-xs hidden mt-1">Este campo es requerido.</span>
+</div>
+<div>
+<label for="email" class="block font-label-md text-label-md text-on-surface-variant mb-2">Correo Electrónico</label>
+<input type="email" id="email" name="email" required
+class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary text-on-surface outline-none transition-all"
+placeholder="juan@email.com">
+<span class="error-msg text-error text-xs hidden mt-1">Ingresa un correo electrónico válido.</span>
+</div>
+<div>
+<label for="phone" class="block font-label-md text-label-md text-on-surface-variant mb-2">Teléfono (opcional)</label>
+<input type="tel" id="phone" name="phone"
+class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary text-on-surface outline-none transition-all"
+placeholder="+54 9 11 1234 5678">
+</div>
+<div>
+<label for="message" class="block font-label-md text-label-md text-on-surface-variant mb-2">¿Cuál es tu objetivo deportivo o consulta?</label>
+<textarea id="message" name="message" rows="4" required
+class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/30 focus:border-primary focus:ring-1 focus:ring-primary text-on-surface outline-none transition-all resize-none"
+placeholder="Quiero mejorar mi rendimiento en maratón..."></textarea>
+<span class="error-msg text-error text-xs hidden mt-1">Este campo es requerido.</span>
+</div>
+<button type="submit" class="w-full py-4 bg-primary text-white rounded-full font-label-md text-label-md premium-button shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span>Enviar Mensaje</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- WhatsApp Contact Section -->
+<section class="py-section-gap px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="bg-primary rounded-[2.5rem] overflow-hidden relative shadow-2xl shadow-primary/30">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+<div class="relative z-10 px-8 py-16 md:p-24 flex flex-col items-center text-center">
+<div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mb-10 border border-white/20">
+<svg class="w-10 h-10 text-white fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.658 1.43 5.63 1.432h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</div>
+<h2 class="font-headline-lg text-white mb-6 max-w-2xl leading-tight">¿Listo para elevar tu rendimiento al siguiente nivel?</h2>
+<p class="text-white/80 text-body-lg mb-12 max-w-xl">Hablemos por WhatsApp. Recibe una asesoría preliminar y despeja tus dudas en minutos.</p>
+<div class="flex flex-col items-center gap-6">
+<a class="inline-flex items-center gap-4 px-12 py-6 bg-white text-primary rounded-full font-headline-md text-[20px] shadow-xl hover:scale-105 active:scale-95 transition-all duration-300" href="https://wa.me/549XXXXXXXXX?text=Hola%20Lic.%20Sof%C3%ADa%20Mart%C3%ADnez,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20planes%20de%20nutrici%C3%B3n%20deportiva%20y%20agendar%20una%20consulta.">
+                            Iniciar Chat Directo
+                        </a>
+<div class="flex items-center gap-2 text-white/60 text-sm">
+<span class="w-2 h-2 rounded-full bg-green-400"></span>
+                            En línea ahora para consultas rápidas
+                        </div>
+</div>
+<div class="mt-16 pt-12 border-t border-white/10 w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<p class="text-white font-bold text-xl mb-1">98%</p>
+<p class="text-white/60 text-xs uppercase tracking-widest">Satisfacción</p>
+</div>
+<div>
+<p class="text-white font-bold text-xl mb-1">24h</p>
+<p class="text-white/60 text-xs uppercase tracking-widest">Respuesta Promedio</p>
+</div>
+<div>
+<p class="text-white font-bold text-xl mb-1">1:1</p>
+<p class="text-white/60 text-xs uppercase tracking-widest">Trato Personal</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container py-20">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between gap-12 border-b border-outline-variant/30 pb-16">
+<div class="space-y-6 max-w-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[18px]">nutrition</span>
+</div>
+<span class="font-headline-md text-[22px] font-bold text-primary">Lic. Sofía Martínez</span>
+</div>
+<p class="text-on-surface-variant text-body-md">Potenciando el deporte a través de la nutrición científica y personalizada desde hace casi una década.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="space-y-4">
+<p class="font-bold text-on-surface text-sm uppercase tracking-widest">Navegación</p>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Inicio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#services">Servicios</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#about">Sobre Mí</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#contact">Contacto</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<p class="font-bold text-on-surface text-sm uppercase tracking-widest">Legal</p>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Privacidad</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Términos</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Cookies</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-10 gap-6">
+<p class="text-on-surface-variant text-sm opacity-60">© 2024 Lic. Sofía Martínez • Todos los derechos reservados.</p>
+<div class="flex items-center gap-1 text-on-surface-variant text-sm font-medium">
+                Design with <span class="material-symbols-outlined text-red-400 text-sm">favorite</span> for High Performance
+            </div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<div class="fixed bottom-8 right-8 z-50">
+<a aria-label="WhatsApp Contact" class="bg-[#25D366] text-white rounded-full w-16 h-16 flex items-center justify-center shadow-2xl shadow-green-500/30 hover:scale-115 hover:-rotate-6 transition-all duration-300 active:scale-95 group relative" href="https://wa.me/549XXXXXXXXX?text=Hola%20Lic.%20Sof%C3%ADa%20Mart%C3%ADnez,%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20planes%20de%20nutrici%C3%B3n%20deportiva%20y%20agendar%20una%20consulta.">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.658 1.43 5.63 1.432h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+<span class="absolute right-20 bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl pointer-events-none border border-outline-variant/30">¡Escríbeme ahora!</span>
+</a>
+</div>
+<script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.height = '70px';
+            header.classList.add('premium-shadow');
+        } else {
+            header.style.height = '80px';
+            header.classList.remove('premium-shadow');
+        }
+    });
+
+    // Simple reveal animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = entry.target.dataset.originalTransform || 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.stagger-card, section > div, .max-w-4xl').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        if (!el.classList.contains('stagger-card')) {
+            el.style.transform = 'translateY(30px)';
+        }
+        observer.observe(el);
+    });
+
+    // Mobile menu functionality
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMobileMenu() {
+        const isOpen = !mobileMenu.classList.contains('translate-x-full');
+        if (isOpen) {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+        } else {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    if (menuBtn && closeMenuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', toggleMobileMenu);
+        closeMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Smooth scroll for all navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+                });
+                return;
+            }
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                const headerOffset = 80; // height of the fixed header
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+
+                // Close mobile menu if open
+                if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) {
+                    toggleMobileMenu();
+                }
+            }
+        });
+    });
+
+    // Contact Form Validation and Success Modal
+    const contactForm = document.getElementById('contact-form');
+    const successModal = document.getElementById('success-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Name validation
+            const nameInput = document.getElementById('name');
+            const nameError = nameInput.nextElementSibling;
+            if (!nameInput.value.trim()) {
+                nameError.classList.remove('hidden');
+                nameInput.classList.add('border-error', 'focus:border-error', 'focus:ring-error');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+                nameInput.classList.remove('border-error', 'focus:border-error', 'focus:ring-error');
+            }
+
+            // Email validation
+            const emailInput = document.getElementById('email');
+            const emailError = emailInput.nextElementSibling;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailInput.value.trim() || !emailPattern.test(emailInput.value.trim())) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-error', 'focus:border-error', 'focus:ring-error');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-error', 'focus:border-error', 'focus:ring-error');
+            }
+
+            // Message validation
+            const messageInput = document.getElementById('message');
+            const messageError = messageInput.nextElementSibling;
+            if (!messageInput.value.trim()) {
+                messageError.classList.remove('hidden');
+                messageInput.classList.add('border-error', 'focus:border-error', 'focus:ring-error');
+                isValid = false;
+            } else {
+                messageError.classList.add('hidden');
+                messageInput.classList.remove('border-error', 'focus:border-error', 'focus:ring-error');
+            }
+
+            if (isValid) {
+                // Show sending state in button
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalBtnContent = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                    <span class="animate-spin inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"></span>
+                    <span>Enviando...</span>
+                `;
+
+                // Simulate API call and show success modal
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                    
+                    // Show modal
+                    if (successModal) {
+                        successModal.classList.remove('opacity-0', 'pointer-events-none');
+                        const modalContent = successModal.querySelector('div');
+                        modalContent.classList.remove('scale-90');
+                        modalContent.classList.add('scale-100');
+                    }
+                    
+                    // Reset form
+                    contactForm.reset();
+                }, 1200);
+            }
+        });
+    }
+
+    if (successModal && closeModalBtn) {
+        closeModalBtn.addEventListener('click', function () {
+            successModal.classList.add('opacity-0', 'pointer-events-none');
+            const modalContent = successModal.querySelector('div');
+            modalContent.classList.add('scale-90');
+            modalContent.classList.remove('scale-100');
+        });
+
+        // Close modal on click outside content
+        successModal.addEventListener('click', function (e) {
+            if (e.target === successModal) {
+                closeModalBtn.click();
+            }
+        });
+    }
+</script>
+
+<!-- Success Modal -->
+<div id="success-modal" class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm flex items-center justify-center px-4 opacity-0 pointer-events-none transition-all duration-300">
+<div class="bg-surface rounded-2xl p-8 max-w-md w-full text-center premium-shadow border border-outline-variant/10 transform scale-90 transition-transform duration-300">
+<div class="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="material-symbols-outlined text-[48px] animate-scale-up">check_circle</span>
+</div>
+<h3 class="font-headline-md text-[24px] text-on-surface mb-3">¡Mensaje Enviado!</h3>
+<p class="font-body-md text-on-surface-variant mb-8">
+Gracias por contactarte. Me comunicaré contigo a la brevedad para comenzar a trabajar en tu rendimiento.
+</p>
+<button id="close-modal-btn" class="px-8 py-3 bg-primary text-white rounded-full font-label-md text-label-md premium-button w-full">
+Entendido
+</button>
+</div>
+</div>
+
+</body></html>
